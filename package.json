@@ -1,0 +1,38 @@
+{
+  "name": "arkia-launcher",
+  "productName": "arkia-launcher",
+  "description": "Arkia Bootstrap",
+  "keywords": [],
+  "main": "./main.js",
+  "version": "0.0.0",
+  "author": "Savalet",
+  "scripts": {
+    "start": "electron .",
+    "package-mac": "electron-packager . arkia-bootstrap --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.png --prune=true --out=release-builds",
+    "package-win": "electron-packager . arkia-bootstrap --overwrite --asar=true --platform=win32 --arch=x64 --icon=./assets/img/icon.png --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE",
+    "package-linux": "electron-packager . arkia-bootstrap --overwrite --asar=true --platform=linux --arch=x64 --icon=./assets/img/icon.png --prune=true --out=release-builds",
+    "dist": "electron-builder build",
+    "dist:win": "npm run dist -- -w",
+    "dist:mac": "npm run dist -- -m",
+    "dist:linux": "npm run dist -- -l"
+  },
+  "dependencies": {
+    "cb": "^0.1.0",
+    "child_process": "^1.0.2",
+    "electron-progressbar": "^2.0.0",
+    "electron-squirrel-startup": "^1.0.0",
+    "extract-zip": "^1.7.0",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "node-unrar": "^0.1.5",
+    "node-unrar-js": "^1.0.2",
+    "node-wget": "^0.4.3",
+    "original-fs": "^1.1.0",
+    "request": "^2.85.0",
+    "unzip-stream": "^0.3.1"
+  },
+  "devDependencies": {
+    "electron": "13.0.0-beta.8",
+    "electron-packager": "^15.2.0"
+  }
+}
